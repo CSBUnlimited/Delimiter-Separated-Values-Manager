@@ -3,16 +3,20 @@ using System.Collections.Generic;
 
 namespace CSBUnlimited.Utils.Dsv
 {
-    public class DsvManager<T> : IDsvManager<T>, IDsvReader<T> where T : class
+    public class DsvManager<T> : IDsvManager<T>, IDsvReader<T>, IDsvWriter<T> where T : class
     {
         private string _delimeter;
         private bool _isHeaderAvailable;
         private string _filePath;
 
-        public IDsvReader<T> DsvReader { get; }
+        public DsvReader<T> _dsvReader;
+        public DsvWriter<T> _dsvWriter;
 
-        public string[] Headers => DsvReader.Headers;
-        public IEnumerable<T> Data => DsvReader.Data;
+        public IDsvReader<T> Reader => _dsvReader;
+        public IDsvWriter<T> Writer => _dsvWriter;
+
+        public string[] Headers => _dsvReader.Headers;
+        public IEnumerable<T> Data => _dsvReader.Data;
 
         public DsvManager(bool isHeaderAvailable, string delimeter, string filePath)
         {
@@ -20,15 +24,31 @@ namespace CSBUnlimited.Utils.Dsv
             _delimeter = delimeter;
             _filePath = filePath;
 
-            DsvReader = new DsvReader<T>(_isHeaderAvailable, _delimeter, _filePath);
+            _dsvReader = new DsvReader<T>(_isHeaderAvailable, _delimeter, _filePath);
+            _dsvWriter = new DsvWriter<T>(_isHeaderAvailable, _delimeter, _filePath, _dsvReader.Headers, _dsvReader);
         }
+
+        public DsvManager(bool isHeaderAvailable, string delimeter, string filePath, string[] overrideHeaders)
+        {
+            _isHeaderAvailable = isHeaderAvailable;
+            _delimeter = delimeter;
+            _filePath = filePath;
+
+            _dsvReader = new DsvReader<T>(_isHeaderAvailable, _delimeter, _filePath, overrideHeaders);
+            _dsvWriter = new DsvWriter<T>(_isHeaderAvailable, _delimeter, _filePath, overrideHeaders, _dsvReader);
+        }
+
+
+        public IEnumerable<T> ReadData() => _dsvReader.ReadData();
 
         public void Refresh()
         {
-            DsvReader.Refresh();
+            _dsvReader.Refresh();
         }
 
-        public IEnumerable<T> ReadData() => DsvReader.ReadData();
-        public string[] ReadHeaders() => DsvReader.ReadHeaders();
+        public void WriteData(T record)
+        {
+            _dsvWriter.WriteData(record);
+        }
     }
 }

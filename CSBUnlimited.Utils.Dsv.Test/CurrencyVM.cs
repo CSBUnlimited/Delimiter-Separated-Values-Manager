@@ -8,7 +8,7 @@ namespace CSBUnlimited.Utils.Dsv.Test
         public string CurrencyName { get; set; }
         [DsvMetaData("NumCode")]
         public string NumericCode { get; set; }
-        [DsvMetaData(HeaderName = "NumCode")]
+        [DsvMetaData(HeaderName = "AlphaCode")]
         public string AlphaCode { get; set; }
         [DsvMetaData(3)]
         public string ArabicName { get; set; }

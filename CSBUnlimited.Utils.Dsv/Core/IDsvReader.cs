@@ -9,6 +9,5 @@ namespace CSBUnlimited.Utils.Dsv.Core
 
         void Refresh();
         IEnumerable<T> ReadData();
-        string[] ReadHeaders();
     }
 }
