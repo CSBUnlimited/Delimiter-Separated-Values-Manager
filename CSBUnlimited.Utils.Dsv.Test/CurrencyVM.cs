@@ -5,6 +5,7 @@ namespace CSBUnlimited.Utils.Dsv.Test
 {
     public class CurrencyVM
     {
+        [DsvMetaData(0)]
         public string CurrencyName { get; set; }
         [DsvMetaData("NumCode")]
         public string NumericCode { get; set; }
