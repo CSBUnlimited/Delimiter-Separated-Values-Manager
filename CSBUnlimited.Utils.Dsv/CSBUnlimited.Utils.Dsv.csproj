@@ -2,6 +2,21 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Version>0.5.0-beta</Version>
+    <Product>CSBUnlimited Delimiter Separated Values Manager</Product>
+    <Description>A simple Manager for Delimiter Separated Values (DSV). Which includes Reader and Writer classes to manage the DSV files.
+
+Included features.
+- Read Dsv files.
+- Writer to Dsv files.
+- Do both at the same time.</Description>
+    <Company>CSBUnlimited</Company>
+    <Authors>Chathuranga Basnayake</Authors>
+    <Copyright>Copyright 2021 CSBUnlimited</Copyright>
+    <PackageProjectUrl>https://github.com/CSBUnlimited/Delimiter-Separated-Values-Manager</PackageProjectUrl>
+    <PackageTags>CSBUnlimited, CSB, Delimiter Separated Values, DSV, CSV, TSV, Comma Separated Values, Tab Separated Values, CSB DSV, CSBUnlimited DSV, CSB Unlimited</PackageTags>
+    <PackageReleaseNotes>Release Notes.
+- Initial Realease. Please note that this is a beta release.</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
