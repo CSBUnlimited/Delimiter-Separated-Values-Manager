@@ -46,6 +46,11 @@ namespace CSBUnlimited.Utils.Dsv.Common
             // Update props
             foreach (var prop in props)
             {
+                if (!((prop.MemberType == MemberTypes.Property || prop.MemberType == MemberTypes.Field) && prop.CanWrite))
+                {
+                    continue;
+                }
+
                 DsvMetaDataAttribute attributeData = prop.GetCustomAttribute<DsvMetaDataAttribute>();
 
                 if (attributeData == null)
@@ -107,6 +112,11 @@ namespace CSBUnlimited.Utils.Dsv.Common
 
             foreach (var prop in props)
             {
+                if (!((prop.MemberType == MemberTypes.Property || prop.MemberType == MemberTypes.Field) && prop.CanRead))
+                {
+                    continue;
+                }
+
                 DsvMetaDataAttribute attributeData = prop.GetCustomAttribute<DsvMetaDataAttribute>();
 
                 if (attributeData == null)

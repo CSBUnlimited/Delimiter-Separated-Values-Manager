@@ -1,0 +1,35 @@
+﻿<?xml version="1.0"?>
+<package  xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>CSBUnlimited.Util.Dsv</id>
+    <version>0.5.0-beta</version>
+    <title>CSBUnlimited Delimiter Separated Values Manager</title>
+    <authors>Chathuranga Basnayake</authors>
+    <owners>CSBUnlimited</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>
+      A simple Manager for Delimiter Separated Values (DSV). Which includes Reader and Writer classes to manage the DSV files.
+
+      Included features.
+      - Read Dsv files.
+      - Writer to Dsv files.
+      - Do both at the same time.
+    </description>
+    <projectUrl>https://github.com/CSBUnlimited/DapperWrapper</projectUrl>
+    <license type="expression">MIT</license>
+    <releaseNotes>
+      Release Notes.
+      - Initial Realease. Please note that this is a beta release.
+    </releaseNotes>
+    <copyright>Copyright 2021 CSBUnlimited</copyright>
+    <tags>CSBUnlimited, CSB, Delimiter Separated Values, DSV, CSV, TSV, Comma Separated Values, Tab Separated Values, CSB DSV, CSBUnlimited DSV, CSB Unlimited</tags>
+    <dependencies>
+      <dependency id="NETStandard.Library" version="2.0.3" />
+    </dependencies>
+    <summary>A simple Manager for Delimiter Separated Values (DSV).</summary>
+  </metadata>
+  <files>
+    <!--<documentation src="../../README.md" />-->
+    <!--<file src="../../README.md" />-->
+  </files>
+</package>

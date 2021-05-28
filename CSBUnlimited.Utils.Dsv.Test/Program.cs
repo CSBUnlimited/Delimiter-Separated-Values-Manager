@@ -9,7 +9,7 @@ namespace CSBUnlimited.Utils.Dsv.Test
             string[] headers = new string[] { "CurrencyName", "NumCode", "AlphaCode", "CurrencyName_Arb" };
             IDsvManager<CurrencyVM> manager = new DsvManager<CurrencyVM>(isHeaderAvailable: true, delimeter: ",", filePath: "Currencies.csv", overrideHeaders: headers);
 
-            manager.WriteData(new CurrencyVM() { CurrencyName = "Sri Lanakan Rupees", AlphaCode = "LKR2", NumericCode = "5556" });
+            manager.WriteData(new CurrencyVM() { CurrencyName = "Sri Lankan Rupees", AlphaCode = "LKR2", NumericCode = "5556" });
         }
     }
 }
